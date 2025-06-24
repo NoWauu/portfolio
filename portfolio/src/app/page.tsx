@@ -1,7 +1,8 @@
 'use client';
 
-import RotatingText from "@/blocks/TextAnimations/RotatingText/RotatingText";
 import StatsCard from "@/components/molecules/StatsCard";
+import Hero from "@/components/organisms/Hero";
+
 export default function Home() {
 
   const rotatingTexts = [
@@ -10,6 +11,7 @@ export default function Home() {
     "Fullstack Developer Apprentice",
     "osu! Player",
     "Tech Enthusiast",
+    "Minecraft plugins Developer"
   ];
 
   const stats = [
@@ -17,13 +19,9 @@ export default function Home() {
     { count: 400, label: "Contributions" },
     { count: 10, label: "Projects" }
   ];
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
-
-      <div className="flex-1 mr-8">
-        <RotatingText texts={rotatingTexts} className="text-xl text-black" />
-      </div>
+    <div className="flex items-center justify-center h-full bg-gray-100">
+      <Hero rotatingTexts={rotatingTexts} />
       <div className="flex-1 mb-8 flex flex-col items-center justify-center space-y-6">
         <StatsCard stats={stats} />
         <a 
@@ -34,7 +32,7 @@ export default function Home() {
         >
           {/* Gradient background */}
           <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
+
           {/* Button content */}
           <div className="relative flex items-center space-x-2">
             <svg 
@@ -48,7 +46,6 @@ export default function Home() {
           </div>
         </a>
       </div>
-
     </div>
   );
 }

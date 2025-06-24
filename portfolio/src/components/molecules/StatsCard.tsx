@@ -27,7 +27,7 @@ export default function StatsCard({
                         to={stat.count} 
                         duration={2.5} 
                         className="text-4xl font-bold"
-                    />
+                    /><span className="text-4xl">+</span>
                 </GradientText>
             </StarBorder>
             <span className="text-sm text-gray-600 text-center mt-1">{stat.label}</span>
