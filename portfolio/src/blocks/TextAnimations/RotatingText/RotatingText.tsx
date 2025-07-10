@@ -14,10 +14,6 @@ import {
   motion,
   AnimatePresence,
   Transition,
-  type VariantLabels,
-  type Target,
-  type AnimationControls,
-  type TargetAndTransition,
 } from "framer-motion";
 
 function cn(...classes: (string | undefined | null | boolean)[]): string {
@@ -31,16 +27,9 @@ export interface RotatingTextRef {
   reset: () => void;
 }
 
-export interface RotatingTextProps
-  extends Omit<
-    React.ComponentPropsWithoutRef<typeof motion.span>,
-    "children" | "transition" | "initial" | "animate" | "exit"
-  > {
+export interface RotatingTextProps {
   texts: string[];
   transition?: Transition;
-  initial?: boolean | Target | VariantLabels;
-  animate?: boolean | VariantLabels | AnimationControls | TargetAndTransition;
-  exit?: Target | VariantLabels;
   animatePresenceMode?: "sync" | "wait";
   animatePresenceInitial?: boolean;
   rotationInterval?: number;
@@ -53,16 +42,37 @@ export interface RotatingTextProps
   mainClassName?: string;
   splitLevelClassName?: string;
   elementLevelClassName?: string;
+  style?: React.CSSProperties;
 }
+
+// Simple animated character component with explicit prop types
+const AnimatedChar: React.FC<{
+  char: string;
+  delay: number;
+  transition: Transition;
+  className?: string;
+  charKey: string;
+}> = ({ char, delay, transition, className, charKey }) => (
+  <motion.span
+    key={charKey}
+    initial={{ y: "100%", opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    exit={{ y: "-120%", opacity: 0 }}
+    transition={{
+      ...transition,
+      delay,
+    }}
+    className={className}
+  >
+    {char}
+  </motion.span>
+);
 
 const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
   (
     {
       texts,
       transition = { type: "spring", damping: 25, stiffness: 300 },
-      initial = { y: "100%", opacity: 0 },
-      animate = { y: 0, opacity: 1 },
-      exit = { y: "-120%", opacity: 0 },
       animatePresenceMode = "wait",
       animatePresenceInitial = false,
       rotationInterval = 2000,
@@ -75,7 +85,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
       mainClassName,
       splitLevelClassName,
       elementLevelClassName,
-      ...rest
+      style,
     },
     ref,
   ) => {
@@ -120,24 +130,27 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
       }));
     }, [texts, currentTextIndex, splitBy]);
 
-    const getStaggerDelay = useCallback(
-      (index: number, totalChars: number): number => {
-        const total = totalChars;
-        if (staggerFrom === "first") return index * staggerDuration;
-        if (staggerFrom === "last")
-          return (total - 1 - index) * staggerDuration;
-        if (staggerFrom === "center") {
-          const center = Math.floor(total / 2);
-          return Math.abs(center - index) * staggerDuration;
-        }
-        if (staggerFrom === "random") {
-          const randomIndex = Math.floor(Math.random() * total);
-          return Math.abs(randomIndex - index) * staggerDuration;
-        }
-        return Math.abs((staggerFrom as number) - index) * staggerDuration;
-      },
-      [staggerFrom, staggerDuration],
-    );
+  const getStaggerDelay = useCallback(
+    (index: number, totalChars: number): number => {
+      const total = totalChars;
+      if (staggerFrom === "first") return index * staggerDuration;
+      if (staggerFrom === "last")
+        return (total - 1 - index) * staggerDuration;
+      if (staggerFrom === "center") {
+        const center = Math.floor(total / 2);
+        return Math.abs(center - index) * staggerDuration;
+      }
+      if (staggerFrom === "random") {
+        const randomIndex = Math.floor(Math.random() * total);
+        return Math.abs(randomIndex - index) * staggerDuration;
+      }
+      if (typeof staggerFrom === "number") {
+        return Math.abs(staggerFrom - index) * staggerDuration;
+      }
+      return 0;
+    },
+    [staggerFrom, staggerDuration],
+  );
 
     const handleIndexChange = useCallback(
       (newIndex: number) => {
@@ -148,24 +161,26 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
     );
 
     const next = useCallback(() => {
-      const nextIndex =
-        currentTextIndex === texts.length - 1
-          ? loop
-            ? 0
-            : currentTextIndex
-          : currentTextIndex + 1;
+      let nextIndex: number;
+      if (currentTextIndex === texts.length - 1) {
+        nextIndex = loop ? 0 : currentTextIndex;
+      } else {
+        nextIndex = currentTextIndex + 1;
+      }
+      
       if (nextIndex !== currentTextIndex) {
         handleIndexChange(nextIndex);
       }
     }, [currentTextIndex, texts.length, loop, handleIndexChange]);
 
     const previous = useCallback(() => {
-      const prevIndex =
-        currentTextIndex === 0
-          ? loop
-            ? texts.length - 1
-            : currentTextIndex
-          : currentTextIndex - 1;
+      let prevIndex: number;
+      if (currentTextIndex === 0) {
+        prevIndex = loop ? texts.length - 1 : currentTextIndex;
+      } else {
+        prevIndex = currentTextIndex - 1;
+      }
+      
       if (prevIndex !== currentTextIndex) {
         handleIndexChange(prevIndex);
       }
@@ -210,9 +225,9 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
           "flex flex-wrap whitespace-pre-wrap relative",
           mainClassName,
         )}
-        {...rest}
         layout
         transition={transition}
+        style={style}
       >
         <span className="sr-only">{texts[currentTextIndex]}</span>
         <AnimatePresence
@@ -235,30 +250,27 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
                 .reduce((sum, word) => sum + word.characters.length, 0);
               return (
                 <span
-                  key={wordIndex}
+                  key={`word-${currentTextIndex}-${wordIndex}`}
                   className={cn("inline-flex", splitLevelClassName)}
                 >
-                  {wordObj.characters.map((char, charIndex) => (
-                    <motion.span
-                      key={charIndex}
-                      initial={initial}
-                      animate={animate}
-                      exit={exit}
-                      transition={{
-                        ...transition,
-                        delay: getStaggerDelay(
+                  {wordObj.characters.map((char, charIndex) => {
+                    return (
+                      <AnimatedChar
+                        key={`char-${currentTextIndex}-${wordIndex}-${charIndex}`}
+                        char={char}
+                        delay={getStaggerDelay(
                           previousCharsCount + charIndex,
                           array.reduce(
                             (sum, word) => sum + word.characters.length,
                             0,
                           ),
-                        ),
-                      }}
-                      className={cn("inline-block", elementLevelClassName)}
-                    >
-                      {char}
-                    </motion.span>
-                  ))}
+                        )}
+                        transition={transition}
+                        className={cn("inline-block", elementLevelClassName)}
+                        charKey={`char-${currentTextIndex}-${wordIndex}-${charIndex}`}
+                      />
+                    );
+                  })}
                   {wordObj.needsSpace && (
                     <span className="whitespace-pre"> </span>
                   )}
