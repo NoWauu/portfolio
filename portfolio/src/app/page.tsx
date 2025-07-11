@@ -20,7 +20,7 @@ export default function Home() {
     { count: 10, label: "Projets" }
   ];
   return (
-    <div className="flex items-center justify-center h-full bg-gray-100">
+    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gray-100">
       <Hero rotatingTexts={rotatingTexts} />
       <div className="flex-1 mb-8 flex flex-col items-center justify-center space-y-6">
         <StatsCard stats={stats} />
