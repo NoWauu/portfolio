@@ -1,5 +1,5 @@
 interface CardStackItemProps {
-  card: {
+  readonly card: {
     title: string;
     period: string;
     description: string;
@@ -8,19 +8,17 @@ interface CardStackItemProps {
     color: string;
     details: string;
   };
-  index: number;
-  currentCardIndex: number;
-  currentStackIndex: number;
-  isSwipping: boolean;
-  swipeDirection: 'left' | 'right' | null;
-  onCardClick: (index: number) => void;
+  readonly index: number;
+  readonly currentCardIndex: number;
+  readonly isSwipping: boolean;
+  readonly swipeDirection: 'left' | 'right' | null;
+  readonly onCardClick: (index: number) => void;
 }
 
 export default function CardStackItem({
   card,
   index,
   currentCardIndex,
-  currentStackIndex,
   isSwipping,
   swipeDirection,
   onCardClick

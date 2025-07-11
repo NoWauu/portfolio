@@ -1,11 +1,19 @@
 interface StackNavigationProps {
-  cardStacks: Array<{
+  readonly cardStacks: Array<{
     name: string;
     icon: string;
-    cards: any[];
+    cards: Array<{
+      title: string;
+      period: string;
+      description: string;
+      tech: string;
+      icon: string;
+      color: string;
+      details: string;
+    }>;
   }>;
-  currentStackIndex: number;
-  onSelectStack: (index: number) => void;
+  readonly currentStackIndex: number;
+  readonly onSelectStack: (index: number) => void;
 }
 
 export default function StackNavigation({

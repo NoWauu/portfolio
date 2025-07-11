@@ -187,7 +187,7 @@ export default function AboutPage() {
             À propos de moi
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Développeur passionné par la création d'applications innovantes, 
+            Développeur passionné par la création d&apos;applications innovantes, 
             toujours en quête de nouveaux défis techniques.
           </p>
         </div>
@@ -219,7 +219,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Aperçu Rapide</h2>
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-white/20">
             <div className="grid md:grid-cols-2 gap-8">
-              {skills.map((skill, index) => (
+              {skills.map((skill) => (
                 <div key={skill.name} className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
@@ -246,13 +246,13 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Pourquoi la programmation ?</h2>
             <div className="text-gray-600 leading-relaxed space-y-4">
               <p>
-                Ce qui me fascine dans la programmation, c'est cette capacité à créer quelque chose à partir de rien. 
+                Ce qui me fascine dans la programmation, c&apos;est cette capacité à créer quelque chose à partir de rien. 
                 Comme dans Minecraft, où des blocs simples permettent de construire des univers complexes, 
                 le code nous donne le pouvoir de transformer des idées en réalités fonctionnelles.
               </p>
               <p>
-                Chaque nouveau projet est un puzzle à résoudre, une opportunité d'apprendre et de grandir. 
-                C'est cette soif de découverte et de création qui me pousse à continuer d'explorer 
+                Chaque nouveau projet est un puzzle à résoudre, une opportunité d&apos;apprendre et de grandir. 
+                C&apos;est cette soif de découverte et de création qui me pousse à continuer d&apos;explorer 
                 de nouvelles technologies et à relever de nouveaux défis.
               </p>
             </div>
