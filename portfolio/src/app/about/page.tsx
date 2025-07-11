@@ -9,6 +9,7 @@ export default function AboutPage() {
   const [currentStackIndex, setCurrentStackIndex] = useState(0);
   const [isSwipping, setIsSwipping] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right' | null>(null);
+  const [isStackTransitioning, setIsStackTransitioning] = useState(false);
 
   // Stack 1: Journey
   const journeyCards = [
@@ -16,7 +17,7 @@ export default function AboutPage() {
       title: "Découverte via Minecraft",
       period: "Les débuts",
       description: "Fasciné par la mécanique du jeu plutôt que par la construction, j'ai voulu comprendre comment Minecraft fonctionnait sous le capot.",
-      tech: "Skript",
+      tech: ["Skript"],
       icon: "🎮",
       color: "from-green-400 to-emerald-600",
       details: "Premier contact avec la logique de programmation à travers les systèmes de jeu."
@@ -25,7 +26,7 @@ export default function AboutPage() {
       title: "Transition vers Java",
       period: "Approfondissement", 
       description: "Grâce aux rencontres et à la communauté, j'ai découvert Java, le langage natif de Minecraft, ouvrant un monde de possibilités.",
-      tech: "Java",
+      tech: ["Java"],
       icon: "☕",
       color: "from-orange-400 to-red-600",
       details: "Développement de plugins complexes avec gestion d'événements et bases de données."
@@ -34,7 +35,7 @@ export default function AboutPage() {
       title: "Diversification Technologique",
       period: "Expansion",
       description: "J'ai élargi mes horizons en explorant diverses technologies : développement web, réseaux, systèmes, bases de données et architecture logicielle.",
-      tech: "Réseaux, Systèmes",
+      tech: ["Réseaux", "Systèmes", "Bases de données"],
       icon: "🔧",
       color: "from-blue-400 to-cyan-600",
       details: "Exploration des technologies web, administration système, protocoles réseau et architectures distribuées."
@@ -43,7 +44,7 @@ export default function AboutPage() {
       title: "Apprenti Fullstack",
       period: "Aujourd'hui",
       description: "Continuellement en apprentissage, je développe des applications complètes en combinant backend et frontend.",
-      tech: "TypeScript, Tailwind",
+      tech: ["TypeScript", "Tailwind", "React", "Next.js"],
       icon: "🚀",
       color: "from-purple-400 to-pink-600",
       details: "Développement d'applications end-to-end avec architecture moderne."
@@ -56,84 +57,84 @@ export default function AboutPage() {
       title: "Langages de Programmation",
       period: "Core Skills",
       description: "Maîtrise des langages principaux pour le développement moderne.",
-      tech: "Java, TypeScript, JavaScript",
+      tech: ["Rust", "Java", "Python", "TypeScript", "JavaScript", "HTML", "CSS"],
       icon: "💻",
       color: "from-blue-500 to-indigo-600",
-      details: "Java (85%), TypeScript (75%), JavaScript (80%)"
+      details: "Des langages utilisés et récents"
     },
     {
       title: "Frameworks & Libraries",
       period: "Frontend",
       description: "Frameworks modernes pour créer des interfaces utilisateur performantes.",
-      tech: "React, Next.js, Tailwind",
+      tech: ["React", "Next.js", "Tailwind", ".NET", "Flutter"],
       icon: "⚛️",
       color: "from-cyan-500 to-blue-600",
-      details: "React ecosystem, Server-side rendering, Component libraries"
+      details: "Librairies de composants, Webassembly, Rendu côté serveur, CSS optimisé"
     },
     {
       title: "Outils & Environnement",
       period: "DevOps",
       description: "Outils de développement et déploiement pour un workflow efficace.",
-      tech: "Git, VS Code, Vercel",
+      tech: ["Git", "VS Code", "JetBrains", "Vercel"],
       icon: "🛠️",
       color: "from-gray-500 to-slate-600",
       details: "Version control, IDE optimization, Cloud deployment"
     },
     {
       title: "Minecraft Development",
-      period: "Specialty",
+      period: "Specialité",
       description: "Développement spécialisé dans l'écosystème Minecraft.",
-      tech: "Bukkit, Spigot, Paper",
+      tech: ["Bukkit", "Spigot", "Paper"],
       icon: "🎮",
       color: "from-green-500 to-emerald-600",
-      details: "Plugin development, Server optimization, Custom mechanics"
+      details: "Développement de plugins, Mécaniques personnalisées"
     }
   ];
 
-  // Stack 3: Projects & Achievements
-  const projectsCards = [
+  // Stack 3: School Journey
+  const schoolCards = [
     {
-      title: "Plugins Minecraft",
-      period: "Gaming",
-      description: "Développement de plugins complexes pour serveurs Minecraft avec des milliers d'utilisateurs.",
-      tech: "Java, MySQL",
-      icon: "🏗️",
-      color: "from-amber-500 to-orange-600",
-      details: "Systèmes de quêtes, économie, PvP, anti-cheat"
+      title: "Collège",
+      period: "2016-2020",
+      description: "Découverte de l'informatique et premiers pas dans la programmation en parallèle des études générales.",
+      tech: ["Bases informatiques"],
+      icon: "🎓",
+      color: "from-green-400 to-teal-600",
+      details: "Première approche de la logique algorithmique et de la résolution de problèmes."
     },
     {
-      title: "Applications Web",
-      period: "Web Development",
-      description: "Création d'applications web modernes avec interfaces utilisateur intuitives.",
-      tech: "React, Next.js",
-      icon: "🌐",
-      color: "from-purple-500 to-pink-600",
-      details: "Portfolio, dashboards, e-commerce, landing pages"
-    },
-    {
-      title: "Projets Open Source",
-      period: "Community",
-      description: "Contributions à des projets open source et partage de connaissances.",
-      tech: "GitHub",
-      icon: "🤝",
-      color: "from-teal-500 to-cyan-600",
-      details: "40+ Pull requests, Documentation, Code reviews"
-    },
-    {
-      title: "Apprentissage Continu",
-      period: "Growth",
-      description: "Veille technologique et apprentissage de nouvelles technologies.",
-      tech: "Various",
+      title: "Lycée Général",
+      period: "2020-2023",
+      description: "Approfondissement des connaissances générales avec spécialisation en mathématiques et sciences. Découverte de Python",
+      tech: ["Mathématiques", "Physique", "NSI"],
       icon: "📚",
-      color: "from-rose-500 to-red-600",
-      details: "Courses, tutorials, conferences, tech blogs"
+      color: "from-blue-400 to-indigo-600",
+      details: "Développement de la logique mathématique appliquée à la programmation."
+    },
+    {
+      title: "BUT Informatique",
+      period: "2023-2026",
+      description: "Formation professionnelle en développement d'applications, alternant développeur FullStack C# pour découvrir les bonnes pratiques et les méthodes de travail professionnelles",
+      tech: ["Développement Full-Stack"],
+      icon: "💼",
+      color: "from-purple-400 to-pink-600",
+      details: "Apprentissage en alternance, projets réels, méthodologies agiles."
+    },
+    {
+      title: "Projets Futurs",
+      period: "À venir...",
+      description: "Objectifs de spécialisation et d&apos;évolution professionnelle dans le développement logiciel ou la cyber sécurité.",
+      tech: ["Spécialisation avancée"],
+      icon: "🚀",
+      color: "from-orange-400 to-red-600",
+      details: "Architecture logicielle, leadership technique, innovation technologique."
     }
   ];
 
   const cardStacks = [
     { name: "Mon Parcours", cards: journeyCards, icon: "🚀" },
     { name: "Compétences", cards: skillsCards, icon: "💡" },
-    { name: "Projets", cards: projectsCards, icon: "🎯" }
+    { name: "Formation", cards: schoolCards, icon: "🎓" }
   ];
 
   const currentStack = cardStacks[currentStackIndex];
@@ -165,16 +166,21 @@ export default function AboutPage() {
   };
 
   const selectStack = (stackIndex: number) => {
-    setCurrentStackIndex(stackIndex);
-    setCurrentCardIndex(0);
+    if (stackIndex === currentStackIndex || isStackTransitioning) return;
+    
+    setIsStackTransitioning(true);
+    
+    // Fade out current stack
+    setTimeout(() => {
+      setCurrentStackIndex(stackIndex);
+      setCurrentCardIndex(0);
+      
+      // Fade in new stack
+      setTimeout(() => {
+        setIsStackTransitioning(false);
+      }, 150);
+    }, 150);
   };
-
-  const skills = [
-    { name: "Java", level: 85, icon: "☕" },
-    { name: "TypeScript", level: 75, icon: "📝" },
-    { name: "React/Next.js", level: 70, icon: "⚛️" },
-    { name: "Minecraft Plugins", level: 90, icon: "🎮" }
-  ];
 
   return (
     <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -182,7 +188,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
             À propos de moi
           </h1>
@@ -193,55 +199,39 @@ export default function AboutPage() {
         </div>
 
         {/* Card Stacks */}
-        <div className="mb-16">
-          {/* Stack Navigation */}
-          <StackNavigation
-            cardStacks={cardStacks}
-            currentStackIndex={currentStackIndex}
-            onSelectStack={selectStack}
-          />
+        <div className="mb-32">
+          {/* Stack Navigation - Separated container */}
+          <div className="mb-4">
+            <StackNavigation
+              cardStacks={cardStacks}
+              currentStackIndex={currentStackIndex}
+              onSelectStack={selectStack}
+            />
+          </div>
 
-          {/* Card Stack Display */}
-          <CardStack
-            cards={currentStack.cards}
-            currentCardIndex={currentCardIndex}
-            setCurrentCardIndex={setCurrentCardIndex}
-            currentStackIndex={currentStackIndex}
-            isSwipping={isSwipping}
-            swipeDirection={swipeDirection}
-            onNextCard={nextCard}
-            onPrevCard={prevCard}
-          />
-        </div>
-
-        {/* Quick Stats */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Aperçu Rapide</h2>
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-white/20">
-            <div className="grid md:grid-cols-2 gap-8">
-              {skills.map((skill) => (
-                <div key={skill.name} className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-2xl">{skill.icon}</span>
-                      <span className="font-semibold text-gray-800">{skill.name}</span>
-                    </div>
-                    <span className="text-sm font-medium text-gray-600">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Card Stack Display - Separated container */}
+          <div 
+            className={`transition-all duration-300 ease-in-out ${
+              isStackTransitioning 
+                ? 'opacity-0 transform scale-95' 
+                : 'opacity-100 transform scale-100'
+            }`}
+          >
+            <CardStack
+              cards={currentStack.cards}
+              currentCardIndex={currentCardIndex}
+              setCurrentCardIndex={setCurrentCardIndex}
+              currentStackIndex={currentStackIndex}
+              isSwipping={isSwipping}
+              swipeDirection={swipeDirection}
+              onNextCard={nextCard}
+              onPrevCard={prevCard}
+            />
           </div>
         </div>
 
         {/* Personal Touch */}
-        <div className="text-center">
+        <div className="text-center mb-16">
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-white/20">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Pourquoi la programmation ?</h2>
             <div className="text-gray-600 leading-relaxed space-y-4">

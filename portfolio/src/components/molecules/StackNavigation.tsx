@@ -6,7 +6,7 @@ interface StackNavigationProps {
       title: string;
       period: string;
       description: string;
-      tech: string;
+      tech: string[];
       icon: string;
       color: string;
       details: string;
@@ -22,20 +22,71 @@ export default function StackNavigation({
   onSelectStack
 }: StackNavigationProps) {
   return (
-    <div className="flex justify-center mb-8">
-      <div className="flex space-x-2 bg-white/70 backdrop-blur-sm rounded-full p-2 border border-white/20">
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center',
+      position: 'relative',
+      zIndex: 9999,
+      isolation: 'isolate',
+      height: 'auto',
+      maxHeight: '60px'
+    }}>
+      <div style={{
+        display: 'flex',
+        gap: '8px',
+        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        backdropFilter: 'blur(4px)',
+        borderRadius: '9999px',
+        padding: '8px',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        height: 'auto',
+        maxHeight: '50px',
+        alignItems: 'center'
+      }}>
         {cardStacks.map((stack, index) => (
           <button
             key={stack.name}
+            type="button"
             onClick={() => onSelectStack(index)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center space-x-2 ${
-              currentStackIndex === index
-                ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                : 'text-gray-600 hover:bg-white/50'
-            }`}
+            style={{
+              all: 'initial',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 24px',
+              border: 'none',
+              borderRadius: '9999px',
+              fontFamily: 'inherit',
+              fontSize: '14px',
+              fontWeight: '500',
+              lineHeight: '1.2',
+              color: currentStackIndex === index ? 'white' : '#4b5563',
+              background: currentStackIndex === index 
+                ? 'linear-gradient(to right, #3b82f6, #9333ea)' 
+                : 'transparent',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              outline: 'none',
+              height: 'auto',
+              maxHeight: '40px'
+            }}
+            onMouseEnter={(e) => {
+              if (currentStackIndex !== index) {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (currentStackIndex !== index) {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }
+            }}
           >
-            <span className="text-lg">{stack.icon}</span>
-            <span>{stack.name}</span>
+            <span style={{ fontSize: '18px', lineHeight: '1' }}>
+              {stack.icon}
+            </span>
+            <span style={{ fontSize: '14px', lineHeight: '1' }}>
+              {stack.name}
+            </span>
           </button>
         ))}
       </div>
