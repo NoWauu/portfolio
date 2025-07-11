@@ -8,7 +8,6 @@ export default function Navbar() {
                 <Link href="/" className="text-xl font-semibold hover:underline">Téo Lemesle</Link>
                 <div className="space-x-4">
                     <Link href="/about" className="hover:underline">About me</Link>
-                    <Link href="/career" className="hover:underline">Career</Link>
                     <Link href="/projects" className="hover:underline">Projects</Link>
                     <Link href="/contact" className="hover:underline">Contact</Link>
                 </div>

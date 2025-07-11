@@ -17,6 +17,18 @@
   100% { background-position: 0% 50%; }
 }
 
+@keyframes swipe-hint {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes float-hand {
+  0% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-5px); }
+  100% { transform: translate(-50%, -50%) translateY(0px); }
+}
+
 /* Animation utilities */
 .animate-star-movement-bottom {
   animation: star-movement-bottom linear infinite alternate;
@@ -28,6 +40,14 @@
 
 .animate-gradient {
   animation: gradient 8s linear infinite;
+}
+
+.animate-swipe-hint {
+  animation: swipe-hint 2s ease-in-out infinite;
+}
+
+.animate-float-hand {
+  animation: float-hand 2s ease-in-out infinite;
 }
 
 :root {
