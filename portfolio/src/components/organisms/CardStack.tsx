@@ -42,7 +42,6 @@ export default function CardStack({
               card={card}
               index={index}
               currentCardIndex={currentCardIndex}
-              currentStackIndex={currentStackIndex}
               isSwipping={isSwipping}
               swipeDirection={swipeDirection}
               onCardClick={setCurrentCardIndex}
