@@ -24,7 +24,7 @@ export default function Projects() {
     {
       id: "vlib",
       title: "Vlib - Gestion et réservation de vélib'",
-      description: "Application web et mobile permettant de regarder les disponibilités des stations vélib' sur une intégration Google Maps, d'ajouter des stations en favoris et de simuler une réservation. Projet semestriel",
+      description: "Application web et mobile permettant de regarder les disponibilités des stations vélib' sur une intégration Google Maps, d'ajouter des stations en favoris et de simuler une réservation. Projet semestriel pour le S3 et S4 du BUT Informatique",
       tech: ["Next.js", "Tailwind", "Django", "RestAPI", "CI", "Git", "Google Maps API", "Flutter", "Dart", "PostgreSQL"],
       githubUrl: "https://github.com/NoWauu/V-lib",
       status: "completed"
@@ -32,10 +32,17 @@ export default function Projects() {
     {
       id: "arqion-plugins",
       title: "Liste de plugins pour Arqion",
-      description: "Une liste des différents plugins réalisés pour l'ancien serveur Minecraft Arqion.",
-      tech: ["Java", "Eclipse", "Spigot", "YAML"],
+      description: "Une liste des différents plugins réalisés pour l'ancien serveur Minecraft Arqion. Plugins ajoutant des fonctionnalités uniques, comme des récompenses aléatoires personnalisables.",
+      tech: ["Minecraft", "Java", "Eclipse", "Spigot", "YAML"],
       githubUrl: "https://github.com/NoWauu/Arqion-plugins",
       status: "completed"
+    },
+    {
+        id: "website-touchthestars",
+        title: "Site web - Toucher les étoiles",
+        description: "Site web professionnel en adéquation avec la demande client, validation et création des maquettes par une graphiste et une UI/UX designer.",
+        tech: ["Next.js", "Tailwind", "Shadcn"],
+        status: "in-progress"
     },
     {
       id: "weather-bot",
@@ -49,7 +56,7 @@ export default function Projects() {
       id: "pulsar",
       title: "Système d'anti-cheat - Pulsar",
       description: "Système complet de détection de tricheurs sur Minecraft à partir de calculs statistiques centralisés.",
-      tech: ["Rust", "gRPC", "zmq", "Java", "Spigot", "Maven", "PostgreSQL", "TimescaleDB", "OpenTelemetry", "Grafana"],
+      tech: ["Rust", "gRPC", "zmq", "Minecraft", "Java", "Spigot", "Maven", "PostgreSQL", "TimescaleDB", "OpenTelemetry", "Grafana"],
       status: "planned"
     }
   ];
