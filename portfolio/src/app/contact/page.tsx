@@ -86,7 +86,7 @@ export default function ContactEmailJS() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-[calc(100vh-4rem)]">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
       <div className="container mx-auto px-6 py-6">
         {/* Header */}
         <div className="text-center mb-8">

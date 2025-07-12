@@ -183,8 +183,8 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      <div className="min-h-screen p-6">
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
+      <div className="p-6">
         <div className="max-w-6xl mx-auto">
         
         {/* Header */}
