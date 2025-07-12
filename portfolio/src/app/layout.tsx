@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio - Téo Lemesle",
-  description: "Portfolio de Téo Lemesle - Développeur Web Full Stack",
+  description: "Portfolio de Téo Lemesle - Développeur Full Stack",
 };
 
 export default function RootLayout({
