@@ -13,6 +13,13 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
+      id: "pulsar",
+      title: "Système d'anti-cheat - Pulsar",
+      description: "Système complet de détection de tricheurs sur Minecraft à partir de calculs statistiques centralisés.",
+      tech: ["Rust", "gRPC", "zmq", "Minecraft", "Java", "Spigot", "Maven", "PostgreSQL", "TimescaleDB", "OpenTelemetry", "Grafana"],
+      status: "planned"
+    },
+    {
       id: "portfolio-website",
       title: "Portfolio Website",
       description: "Site web personnel développé avec Next.js, TypeScript et Tailwind CSS. Présente mes compétences, projets et parcours professionnel avec des animations interactives et un design moderne.",
@@ -21,6 +28,14 @@ export default function Projects() {
       liveUrl: "portfolio-noway-ys-projects.vercel.app",
       status: "in-progress"
     },
+    {
+      id: "website-touchthestars",
+      title: "Site web - Toucher les étoiles",
+      description: "Site web professionnel en adéquation avec la demande client, validation et création des maquettes par une graphiste et une UI/UX designer.",
+      tech: ["Next.js", "Tailwind", "Shadcn"],
+      status: "in-progress"
+    },
+    
     {
       id: "vlib",
       title: "Vlib - Gestion et réservation de vélib'",
@@ -38,26 +53,12 @@ export default function Projects() {
       status: "completed"
     },
     {
-        id: "website-touchthestars",
-        title: "Site web - Toucher les étoiles",
-        description: "Site web professionnel en adéquation avec la demande client, validation et création des maquettes par une graphiste et une UI/UX designer.",
-        tech: ["Next.js", "Tailwind", "Shadcn"],
-        status: "in-progress"
-    },
-    {
       id: "weather-bot",
       title: "Bot Discord - Météo",
       description: "Bot discord simple permettant de récupérer la météo sur une ville spécifiée, ainsi que toutes les données associées (température, humidité, ...)",
       tech: ["JavaScript", "discord.js", "Discord"],
       githubUrl: "https://github.com/NoWauu/WeatherBot",
       status: "completed"
-    },
-    {
-      id: "pulsar",
-      title: "Système d'anti-cheat - Pulsar",
-      description: "Système complet de détection de tricheurs sur Minecraft à partir de calculs statistiques centralisés.",
-      tech: ["Rust", "gRPC", "zmq", "Minecraft", "Java", "Spigot", "Maven", "PostgreSQL", "TimescaleDB", "OpenTelemetry", "Grafana"],
-      status: "planned"
     }
   ];
 
