@@ -25,7 +25,6 @@ export default function Projects() {
       description: "Site web personnel développé avec Next.js, TypeScript et Tailwind CSS. Présente mes compétences, projets et parcours professionnel avec des animations interactives et un design moderne.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Git", "Vercel"],
       githubUrl: "https://github.com/NoWauu/portfolio",
-      liveUrl: "portfolio-noway-ys-projects.vercel.app",
       status: "in-progress"
     },
     {
