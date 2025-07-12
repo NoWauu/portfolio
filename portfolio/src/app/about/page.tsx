@@ -44,7 +44,7 @@ export default function AboutPage() {
       title: "Apprenti Fullstack",
       period: "Aujourd'hui",
       description: "Continuellement en apprentissage, je développe des applications complètes en combinant backend et frontend.",
-      tech: ["TypeScript", "Tailwind", "React", "Next.js"],
+      tech: ["TypeScript", "Tailwind", "React", "Next.js", "C#", "Rust", "Java", "..."],
       icon: "🚀",
       color: "from-purple-400 to-pink-600",
       details: "Développement d'applications end-to-end avec architecture moderne."
@@ -123,7 +123,7 @@ export default function AboutPage() {
     {
       title: "Projets Futurs",
       period: "À venir...",
-      description: "Objectifs de spécialisation et d&apos;évolution professionnelle dans le développement logiciel ou la cyber sécurité.",
+      description: "Objectifs de spécialisation et d'évolution professionnelle dans le développement logiciel ou la cyber sécurité.",
       tech: ["Spécialisation avancée"],
       icon: "🚀",
       color: "from-orange-400 to-red-600",
