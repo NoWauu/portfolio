@@ -1,0 +1,1 @@
+# Drop project screenshots here and reference them as /projects/<file> in src/lib/data/*.ts
