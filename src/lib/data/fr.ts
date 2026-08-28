@@ -14,7 +14,7 @@ export const fr: Content = {
 	meta: {
 		title: 'Téo Lemesle - Développeur Fullstack',
 		description:
-			'Développeur fullstack et étudiant en ingénierie logicielle à Paris. Applications web & mobiles, clean architecture, systèmes distribués.'
+			'Développeur fullstack et étudiant en ingénierie logicielle à Brest. Applications web & mobiles, clean architecture, systèmes distribués.'
 	},
 
 	a11y: {
@@ -32,7 +32,7 @@ export const fr: Content = {
 		ctaResume: 'CV',
 		info: [
 			{ k: 'poste', v: 'Développeur Fullstack' },
-			{ k: 'ville', v: 'Paris, France' },
+			{ k: 'ville', v: 'Brest, France' },
 			{ k: 'entreprise', v: 'VALARS (alternance)' },
 			{ k: 'école', v: 'Sorbonne Paris Nord' },
 			{ k: 'diplôme', v: 'BUT3 Informatique' },

@@ -10,7 +10,7 @@ export const site = {
 	url: 'https://teolemesle.vercel.app',
 	email: 'teo.lemesle.pro@gmail.com',
 	phone: { display: '+33 6 29 94 70 94', href: 'tel:+33629947094' },
-	location: 'Paris, France',
+	location: 'Brest, France',
 	/**
 	 * Résumé link. Drop the PDF in `static/cv/` and set this to
 	 * `/cv/Teo_Lemesle.pdf` - the hero button appears on its own.
