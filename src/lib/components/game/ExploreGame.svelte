@@ -99,7 +99,7 @@
 		bind:this={dialog}
 		onclick={(e) => e.stopPropagation()}
 	>
-		<TerminalWindow title="{site.handle}@{site.host}: ~/explore — {t.game.title}" flush>
+		<TerminalWindow title="{site.handle}@{site.host}: ~/explore" flush>
 			{#snippet actions()}
 				<button class="close" onclick={onclose} aria-label={t.game.close}>✕</button>
 			{/snippet}
@@ -207,7 +207,7 @@
 		place-items: center;
 		background: var(--panel-3);
 	}
-	/* Letterboxed so the map keeps its aspect ratio — no squashed rooms. */
+	/* Letterboxed so the map keeps its aspect ratio - no squashed rooms. */
 	canvas {
 		display: block;
 		width: 100%;
@@ -245,7 +245,7 @@
 	}
 	.pad {
 		background: var(--panel);
-		border: 1px solid var(--border-bright);
+		border: 1px solid var(--border-control);
 		border-radius: var(--r-sm);
 		color: var(--accent);
 		font-size: 13px;

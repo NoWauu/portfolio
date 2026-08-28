@@ -3,17 +3,14 @@
 	import { reveal, scramble } from '$lib/actions/motion';
 	import type { SectionCommand } from '$lib/sections';
 
-	/** Anchored page section with the `$ cat file` + numbered-title header. */
+	/** Anchored page section with the `$ cat file` command line above its title. */
 	let {
 		id,
-		index,
 		title,
 		command,
 		children
 	}: {
 		id: string;
-		/** Two-digit order badge, e.g. `03`. */
-		index: string;
 		title: string;
 		command: SectionCommand;
 		children: Snippet;
@@ -29,10 +26,7 @@
 				use:scramble>{command.arg}</span
 			>
 		</p>
-		<div class="title-row">
-			<span class="index">{index}</span>
-			<h2 class="heading title">{title}</h2>
-		</div>
+		<h2 class="heading title">{title}</h2>
 	</div>
 
 	{@render children()}
@@ -58,16 +52,6 @@
 	}
 	.arg {
 		color: var(--dim);
-	}
-	.title-row {
-		display: flex;
-		align-items: baseline;
-		gap: 14px;
-	}
-	.index {
-		font-size: 13px;
-		color: var(--accent);
-		font-weight: 600;
 	}
 	.title {
 		font-size: clamp(28px, 4.4vw, 46px);

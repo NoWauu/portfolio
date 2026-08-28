@@ -15,6 +15,12 @@
 			linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 46px 46px,
 			linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 46px 46px;
 	}
+	/*
+	 * Static texture. It used to animate, but a full-viewport fixed layer with
+	 * mix-blend-mode on a 1.1s infinite loop forces a composited repaint of the
+	 * whole page every frame, for the entire session. The scanlines are 1px
+	 * apart; the movement was not visible enough to pay for that.
+	 */
 	.scan {
 		z-index: 40;
 		opacity: 0.5;
@@ -24,12 +30,5 @@
 			transparent 0 2px,
 			rgba(125, 125, 125, 0.05) 2px 3px
 		);
-		animation: scan 1.1s steps(4, end) infinite;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.scan {
-			display: none;
-		}
 	}
 </style>

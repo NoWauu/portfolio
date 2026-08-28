@@ -12,7 +12,7 @@ export const fr: Content = {
 	},
 
 	meta: {
-		title: 'Téo Lemesle — Développeur Fullstack',
+		title: 'Téo Lemesle - Développeur Fullstack',
 		description:
 			'Développeur fullstack et étudiant en ingénierie logicielle à Paris. Applications web & mobiles, clean architecture, systèmes distribués.'
 	},
@@ -24,22 +24,21 @@ export const fr: Content = {
 	},
 
 	hero: {
-		status: 'Disponible · étudiant en école d’ingénieur',
 		role: 'Développeur Fullstack',
-		sub: 'Étudiant en ingénierie logicielle — BUT3 Informatique',
 		intro:
-			'Je conçois des applications web & mobiles full-stack, avec un faible pour la clean architecture, les systèmes distribués et les technologies web modernes. Actuellement en alternance chez VALARS.',
+			'Je conçois des applications web et mobiles full-stack. Clean architecture, systèmes distribués, technologies web modernes.',
 		ctaWork: 'voir mes projets',
 		ctaContact: 'me contacter',
 		ctaResume: 'CV',
 		info: [
 			{ k: 'poste', v: 'Développeur Fullstack' },
 			{ k: 'ville', v: 'Paris, France' },
-			{ k: 'entreprise', v: 'VALARS — alternance' },
+			{ k: 'entreprise', v: 'VALARS (alternance)' },
 			{ k: 'école', v: 'Sorbonne Paris Nord' },
 			{ k: 'diplôme', v: 'BUT3 Informatique' },
-			{ k: 'anglais', v: 'C1 · TOEIC 960' },
-			{ k: 'statut', v: 'école d’ingénieur · depuis 09/2026' }
+			{ k: 'langues', v: 'FR maternel · EN C1 (TOEIC 960)' },
+			{ k: 'disponible', v: 'septembre 2026' },
+			{ k: 'à côté', v: 'Hackathons · Volleyball' }
 		]
 	},
 
@@ -48,12 +47,6 @@ export const fr: Content = {
 		paragraphs: [
 			'Étudiant en 3ᵉ année de BUT Informatique (BUT3) à la Sorbonne Paris Nord, actuellement en alternance chez VALARS où je développe des applications web & mobiles en .NET. Passionné par le développement full-stack et l’ingénierie logicielle.',
 			'Je suis maintenant en école d’ingénieur pour approfondir mes compétences en architectures distribuées et en technologies web modernes. En dehors du code : hackathons, volleyball, et une obsession saine pour les systèmes bien conçus.'
-		],
-		facts: [
-			{ label: 'localisation', value: 'Paris, France' },
-			{ label: 'langues', value: 'FR maternel · EN C1 (TOEIC 960)' },
-			{ label: 'disponibilité', value: 'Disponible septembre 2026' },
-			{ label: 'à côté', value: 'Hackathons · Volleyball' }
 		]
 	},
 
@@ -103,11 +96,6 @@ export const fr: Content = {
 					'Jenkins',
 					'GitHub Actions'
 				]
-			},
-			{
-				label: 'Langues',
-				icon: '@',
-				items: ['Anglais — C1 · TOEIC 960', 'Français — Maternel']
 			}
 		]
 	},
@@ -117,12 +105,12 @@ export const fr: Content = {
 		list: [
 			{
 				id: 'skyblock-tracker',
-				name: 'SkyblockTracker — Analyse de marché & IA prédictive',
+				name: 'SkyblockTracker',
 				type: 'Personnel',
 				stack: ['Rust', 'Leptos', 'WASM', 'TimescaleDB', 'Conv1D', 'DAG'],
 				desc: [
-					'Tout en Rust : service d’ingestion + front web Leptos/WASM',
-					'Récupération et analyse en continu du marché interne d’Hypixel Skyblock',
+					'Analyse prédictive du marché interne d’Hypixel Skyblock',
+					'Tout en Rust : service d’ingestion et front web Leptos/WASM',
 					'Prix stockés en séries temporelles dans TigerData (ex-TimescaleDB) pour l’historique',
 					'Modèle Conv1D prédisant le mouvement de prix à court terme, item par item',
 					'DAG des dépendances inter-items pour propager une prédiction aux items liés'
@@ -143,7 +131,7 @@ export const fr: Content = {
 			},
 			{
 				id: 'recipes-rag',
-				name: 'Chatbot RAG — recettes turques',
+				name: 'Chatbot RAG de recettes turques',
 				type: 'Personnel',
 				stack: ['Python', 'FastAPI', 'LangChain', 'ChromaDB', 'React 19', 'Docker'],
 				desc: [
@@ -156,14 +144,14 @@ export const fr: Content = {
 			},
 			{
 				id: '4sure',
-				name: '4Sure — IA de vision embarquée',
+				name: '4Sure',
 				type: 'Académique',
 				stack: ['TensorFlow / Keras', 'TensorFlow Lite', 'React Native', 'Expo', 'NativeWind'],
 				desc: [
 					'Application mobile prédisant âge, genre et ethnicité depuis la caméra ou une photo',
 					'Modèles entraînés en TensorFlow/Keras, exportés en TFLite pour l’inférence sur l’appareil',
 					'Application React Native + Expo avec comptes et historique des scans par utilisateur',
-					'Projet de 5ᵉ semestre de BUT — modèles, benchmarks et rapport complet dans le dépôt'
+					'Projet de 5ᵉ semestre de BUT : modèles, benchmarks et rapport complet dans le dépôt'
 				],
 				links: [{ label: 'sources', href: 'https://github.com/NoWauu/4Sure' }]
 			},
@@ -181,13 +169,13 @@ export const fr: Content = {
 			},
 			{
 				id: '24h-info',
-				name: '24h INFO 2026 — dépôt du concours',
+				name: '24h INFO 2026, dépôt du concours',
 				type: 'Concours',
 				stack: ['Svelte', 'Rust', 'Python'],
 				desc: [
 					'Tout ce que mon équipe a construit pendant les 24h du concours national à Montpellier',
 					'Trois sprints de 8h : algorithmique, web et cybersécurité',
-					'Livré sous pression — 1ʳᵉ place nationale sur l’épreuve web'
+					'Livré sous pression. 1ʳᵉ place nationale sur l’épreuve web'
 				],
 				links: [{ label: 'sources', href: 'https://github.com/NoWauu/24h-info-2026' }]
 			},
@@ -211,7 +199,7 @@ export const fr: Content = {
 		list: [
 			{
 				id: 'consulting',
-				role: 'Consultant indépendant — Développement logiciel',
+				role: 'Consultant indépendant en développement logiciel',
 				company: 'Micro-entreprise',
 				dates: 'Depuis juin 2026',
 				location: 'France · Télétravail',
@@ -224,9 +212,9 @@ export const fr: Content = {
 			},
 			{
 				id: 'valars',
-				role: 'Développeur Fullstack — Alternance',
+				role: 'Développeur Fullstack (Alternance)',
 				company: 'VALARS',
-				dates: 'Oct 2024 – Sep 2026',
+				dates: 'Oct 2024 - Sep 2026',
 				location: 'Paris, France',
 				desc: [
 					'Application web & mobile en .NET Blazor et MAUI Hybrid',
@@ -239,9 +227,9 @@ export const fr: Content = {
 			},
 			{
 				id: 'fiverr',
-				role: 'Développeur freelance — Plugins Minecraft',
+				role: 'Développeur freelance (plugins Minecraft)',
 				company: 'Fiverr',
-				dates: '2022 – 2025',
+				dates: '2022 - 2025',
 				location: 'Télétravail',
 				desc: [
 					'Trois ans de freelance : plugins de serveur Minecraft sur mesure, selon le cahier des charges client',
@@ -259,21 +247,21 @@ export const fr: Content = {
 			{
 				id: 'isen',
 				dates: 'Depuis sept. 2026',
-				degree: 'Diplôme d’ingénieur — Technologies Marines',
+				degree: 'Diplôme d’ingénieur en Technologies Marines',
 				school: 'ISEN Ouest · Brest',
-				note: 'Filière Technologies Marines — cycle ingénieur dans la continuité du BUT Informatique.'
+				note: 'Cycle ingénieur dans la continuité du BUT Informatique.'
 			},
 			{
 				id: 'but',
-				dates: 'Sep 2023 – Sep 2026',
+				dates: 'Sep 2023 - Sep 2026',
 				degree: 'BUT Informatique (Alternance)',
 				school: 'IUT de Villetaneuse · Sorbonne Paris Nord',
 				note: 'Modules clés : Algorithmique & Complexité, Systèmes d’Exploitation, Réseaux, Bases de Données, Développement web.'
 			},
 			{
 				id: 'bac',
-				dates: '2020 – 2023',
-				degree: 'Baccalauréat Général — Mention assez bien',
+				dates: '2020 - 2023',
+				degree: 'Baccalauréat Général (mention assez bien)',
 				school: 'Lycée Henri Moissan, Meaux',
 				note: 'Spécialités : NSI & Physique-Chimie · Option Mathématiques complémentaires.'
 			}
@@ -286,22 +274,19 @@ export const fr: Content = {
 			event: '24h INFO 2026',
 			location: 'Montpellier, France',
 			rank: 'Champions nationaux',
-			desc: 'Un concours national de 24 heures découpé en trois sprints de 8h — algorithmique, web et cybersécurité. Mon équipe a décroché la 1ʳᵉ place nationale.',
+			desc: 'Un concours national de 24 heures découpé en trois sprints de 8h : algorithmique, web et cybersécurité. Mon équipe a décroché la 1ʳᵉ place nationale.',
 			tracks: [
 				{ track: 'Web', place: '1ʳᵉ', note: '1ʳᵉ place nationale', tier: 'gold' },
 				{ track: 'Cybersécurité', place: '2ᵉ', note: '2ᵉ place nationale', tier: 'silver' },
 				{
 					track: 'Algorithmique',
-					place: '½',
-					note: 'Non classés — nous n’avons fait que la moitié, tout en surpassant toutes les autres équipes sur la partie traitée.',
+					place: 'n/a',
+					note: 'Épreuve non terminée',
 					tier: 'ghost'
 				}
 			]
 		},
-		others: [
-			{ name: 'Nuit de l’Info', note: 'Défi de développement nocturne annuel' },
-			{ name: 'Hackathons', note: 'Participation régulière' }
-		]
+		others: [{ name: 'Nuit de l’Info', note: 'Défi de développement nocturne annuel' }]
 	},
 
 	contact: {
@@ -321,7 +306,7 @@ export const fr: Content = {
 		title: 'mode exploration (bonus)',
 		hint: 'ZQSD / flèches pour se déplacer',
 		progress: 'découvert',
-		done: 'Toutes les salles explorées — vous me connaissez bien.',
+		done: 'Toutes les salles explorées. Vous me connaissez bien.',
 		close: 'Fermer le mode exploration'
 	},
 

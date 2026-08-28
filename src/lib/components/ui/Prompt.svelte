@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { site } from '$lib/data';
 
-	/** `teo@portfolio:~$` — the shell prompt used in the nav and the hero. */
+	/** `teo@portfolio:~$` - the shell prompt used in the nav and the hero. */
 	let { path = '~', showUser = true }: { path?: string; showUser?: boolean } = $props();
 </script>
 

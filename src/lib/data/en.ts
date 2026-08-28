@@ -12,7 +12,7 @@ export const en: Content = {
 	},
 
 	meta: {
-		title: 'Téo Lemesle — Fullstack Developer',
+		title: 'Téo Lemesle - Fullstack Developer',
 		description:
 			'Fullstack developer and software engineering student in Paris. Web & mobile apps, clean architecture, distributed systems.'
 	},
@@ -24,22 +24,21 @@ export const en: Content = {
 	},
 
 	hero: {
-		status: 'Available · engineering school student',
 		role: 'Fullstack Developer',
-		sub: 'Software engineering student — BUT3 Informatique',
 		intro:
-			'I build full-stack web & mobile apps, with a soft spot for clean architecture, distributed systems and modern web tech. Currently in a work-study program at VALARS.',
+			'I build full-stack web and mobile apps. Clean architecture, distributed systems, modern web tech.',
 		ctaWork: 'view work',
 		ctaContact: 'get in touch',
 		ctaResume: 'résumé',
 		info: [
 			{ k: 'role', v: 'Fullstack Developer' },
 			{ k: 'location', v: 'Paris, France' },
-			{ k: 'company', v: 'VALARS — work-study' },
+			{ k: 'company', v: 'VALARS (work-study)' },
 			{ k: 'school', v: 'Sorbonne Paris Nord' },
 			{ k: 'degree', v: 'BUT3 Informatique' },
-			{ k: 'english', v: 'C1 · TOEIC 960' },
-			{ k: 'status', v: 'engineering school · since 09/2026' }
+			{ k: 'languages', v: 'FR native · EN C1 (TOEIC 960)' },
+			{ k: 'available', v: 'September 2026' },
+			{ k: 'off-clock', v: 'Hackathons · Volleyball' }
 		]
 	},
 
@@ -48,12 +47,6 @@ export const en: Content = {
 		paragraphs: [
 			'Third-year Computer Science student (BUT3) at Sorbonne Paris Nord, currently in a work-study program at VALARS where I develop .NET web & mobile applications. I’m passionate about full-stack development and software engineering.',
 			'I’m now studying at an engineering school to deepen my skills in distributed architectures and modern web technologies. Outside of code: hackathons, volleyball, and a healthy obsession with well-designed systems.'
-		],
-		facts: [
-			{ label: 'based in', value: 'Paris, France' },
-			{ label: 'languages', value: 'FR native · EN C1 (TOEIC 960)' },
-			{ label: 'availability', value: 'Available September 2026' },
-			{ label: 'off the clock', value: 'Hackathons · Volleyball' }
 		]
 	},
 
@@ -103,11 +96,6 @@ export const en: Content = {
 					'Jenkins',
 					'GitHub Actions'
 				]
-			},
-			{
-				label: 'Spoken',
-				icon: '@',
-				items: ['English — C1 · TOEIC 960', 'French — Native']
 			}
 		]
 	},
@@ -117,12 +105,12 @@ export const en: Content = {
 		list: [
 			{
 				id: 'skyblock-tracker',
-				name: 'SkyblockTracker — Market Analysis & Predictive AI',
+				name: 'SkyblockTracker',
 				type: 'Personal',
 				stack: ['Rust', 'Leptos', 'WASM', 'TimescaleDB', 'Conv1D', 'DAG'],
 				desc: [
-					'End-to-end in Rust: ingestion service + Leptos/WASM web front-end',
-					'Continuously scrapes and analyses the Hypixel Skyblock internal market',
+					'Predictive market analysis for the Hypixel Skyblock in-game economy',
+					'End-to-end in Rust: ingestion service plus a Leptos/WASM web front-end',
 					'Prices stored as time series in TigerData (ex-TimescaleDB) for historical querying',
 					'Conv1D model forecasting short-term price movement, item by item',
 					'DAG of inter-item dependencies so a predicted move propagates to linked items'
@@ -156,14 +144,14 @@ export const en: Content = {
 			},
 			{
 				id: '4sure',
-				name: '4Sure — On-device Vision AI',
+				name: '4Sure',
 				type: 'Academic',
 				stack: ['TensorFlow / Keras', 'TensorFlow Lite', 'React Native', 'Expo', 'NativeWind'],
 				desc: [
 					'Mobile app predicting age, gender and ethnicity from the live camera or a gallery photo',
 					'Models trained in TensorFlow/Keras, exported to TFLite for on-device inference',
 					'React Native + Expo app with accounts and a per-user scan history',
-					'5th-semester BUT project — models, benchmarks and full report shipped in the repo'
+					'5th-semester BUT project: models, benchmarks and full report shipped in the repo'
 				],
 				links: [{ label: 'source', href: 'https://github.com/NoWauu/4Sure' }]
 			},
@@ -181,13 +169,13 @@ export const en: Content = {
 			},
 			{
 				id: '24h-info',
-				name: '24h INFO 2026 — contest repo',
+				name: '24h INFO 2026 contest repo',
 				type: 'Contest',
 				stack: ['Svelte', 'Rust', 'Python'],
 				desc: [
 					'Everything my team built during the 24-hour national contest in Montpellier',
 					'Three 8-hour sprints: algorithms, web and cybersecurity',
-					'Shipped under time pressure — 1st place nationally on the web track'
+					'Shipped under time pressure. 1st place nationally on the web track'
 				],
 				links: [{ label: 'source', href: 'https://github.com/NoWauu/24h-info-2026' }]
 			},
@@ -211,7 +199,7 @@ export const en: Content = {
 		list: [
 			{
 				id: 'consulting',
-				role: 'Independent Consultant — Software Development',
+				role: 'Independent Software Consultant',
 				company: 'Micro-entreprise',
 				dates: 'Since Jun 2026',
 				location: 'France · Remote',
@@ -224,9 +212,9 @@ export const en: Content = {
 			},
 			{
 				id: 'valars',
-				role: 'Fullstack Developer — Work-study',
+				role: 'Fullstack Developer (Work-study)',
 				company: 'VALARS',
-				dates: 'Oct 2024 – Sep 2026',
+				dates: 'Oct 2024 - Sep 2026',
 				location: 'Paris, France',
 				desc: [
 					'Web & mobile application in .NET Blazor and MAUI Hybrid',
@@ -239,9 +227,9 @@ export const en: Content = {
 			},
 			{
 				id: 'fiverr',
-				role: 'Freelance Developer — Minecraft Plugins',
+				role: 'Freelance Developer (Minecraft plugins)',
 				company: 'Fiverr',
-				dates: '2022 – 2025',
+				dates: '2022 - 2025',
 				location: 'Remote',
 				desc: [
 					'Three years of freelancing: custom Minecraft server plugins built to client specs',
@@ -259,21 +247,21 @@ export const en: Content = {
 			{
 				id: 'isen',
 				dates: 'Since Sep 2026',
-				degree: 'Engineering degree — Marine Technologies',
+				degree: 'Engineering degree in Marine Technologies',
 				school: 'ISEN Ouest · Brest',
-				note: 'Filière Technologies Marines — engineering cycle following the BUT Informatique.'
+				note: 'Engineering cycle following on from the BUT Informatique.'
 			},
 			{
 				id: 'but',
-				dates: 'Sep 2023 – Sep 2026',
+				dates: 'Sep 2023 - Sep 2026',
 				degree: 'BUT Informatique (Work-study)',
 				school: 'IUT de Villetaneuse · Sorbonne Paris Nord',
 				note: 'Key modules: Algorithms & Complexity, Operating Systems, Networks, Databases, Web Development.'
 			},
 			{
 				id: 'bac',
-				dates: '2020 – 2023',
-				degree: 'Baccalauréat Général — Honours',
+				dates: '2020 - 2023',
+				degree: 'Baccalauréat Général (mention assez bien)',
 				school: 'Lycée Henri Moissan, Meaux',
 				note: 'Specialities: NSI & Physics-Chemistry · Advanced Maths option.'
 			}
@@ -286,22 +274,19 @@ export const en: Content = {
 			event: '24h INFO 2026',
 			location: 'Montpellier, France',
 			rank: 'National Champions',
-			desc: 'A 24-hour national contest split into three 8-hour sprints — algorithms, web and cybersecurity. My team took 1st place nationally.',
+			desc: 'A 24-hour national contest split into three 8-hour sprints: algorithms, web and cybersecurity. My team took 1st place nationally.',
 			tracks: [
 				{ track: 'Web', place: '1st', note: '1st place nationally', tier: 'gold' },
 				{ track: 'Cybersecurity', place: '2nd', note: '2nd place nationally', tier: 'silver' },
 				{
 					track: 'Algorithms',
-					place: '½',
-					note: 'Unranked — we completed only half, yet outperformed every other team on the part we tackled.',
+					place: 'n/a',
+					note: 'Sprint left unfinished',
 					tier: 'ghost'
 				}
 			]
 		},
-		others: [
-			{ name: 'Nuit de l’Info', note: 'Annual overnight dev challenge' },
-			{ name: 'Hackathons', note: 'Regular participant' }
-		]
+		others: [{ name: 'Nuit de l’Info', note: 'Annual overnight dev challenge' }]
 	},
 
 	contact: {
@@ -321,7 +306,7 @@ export const en: Content = {
 		title: 'explore mode (bonus)',
 		hint: 'WASD / arrows to move',
 		progress: 'discovered',
-		done: 'All rooms explored — you know me well.',
+		done: 'All rooms explored. You know me well.',
 		close: 'Close explore mode'
 	},
 

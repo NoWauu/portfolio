@@ -2,7 +2,7 @@ import { browser } from '$app/environment';
 import { content, locales } from '$lib/data';
 import type { Content, Locale, Theme } from '$lib/types';
 
-/** localStorage keys — kept in sync with the inline boot script in `src/app.html`. */
+/** localStorage keys - kept in sync with the inline boot script in `src/app.html`. */
 const KEYS = { theme: 'tl:theme', locale: 'tl:locale' } as const;
 
 const THEMES: readonly Theme[] = ['dark', 'light'];
@@ -30,7 +30,7 @@ function systemLocale(): Locale {
 
 /**
  * Theme + locale, persisted to localStorage and mirrored onto <html>.
- * `prefs.t` is the translated content bundle — use it everywhere instead of
+ * `prefs.t` is the translated content bundle - use it everywhere instead of
  * importing a language file directly.
  */
 class Preferences {

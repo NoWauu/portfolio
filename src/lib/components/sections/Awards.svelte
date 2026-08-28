@@ -6,8 +6,6 @@
 </script>
 
 <article class="featured panel" use:reveal>
-	<span class="watermark" aria-hidden="true">01</span>
-
 	<div class="head">
 		<span class="rank"><span aria-hidden="true">★</span> {awards.featured.rank}</span>
 		<span class="place">{awards.featured.location}</span>
@@ -49,20 +47,6 @@
 		padding: clamp(22px, 4vw, 30px);
 		overflow: hidden;
 	}
-	.watermark {
-		position: absolute;
-		top: 0;
-		right: 0;
-		font-family: var(--font-display);
-		font-weight: 700;
-		font-size: 160px;
-		line-height: 1;
-		color: var(--accent);
-		opacity: 0.06;
-		pointer-events: none;
-		transform: translate(18%, -18%);
-	}
-
 	.head {
 		display: flex;
 		flex-wrap: wrap;

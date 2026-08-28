@@ -27,14 +27,9 @@
 <main id="top" use:scrollspy={(id) => (active = id)}>
 	<Hero />
 
-	{#each sections as section, i (section.id)}
+	{#each sections as section (section.id)}
 		{@const SectionBody = section.component}
-		<Section
-			id={section.id}
-			index={String(i + 1).padStart(2, '0')}
-			title={prefs.t[section.id].title}
-			command={section.command}
-		>
+		<Section id={section.id} title={prefs.t[section.id].title} command={section.command}>
 			<SectionBody />
 		</Section>
 	{/each}

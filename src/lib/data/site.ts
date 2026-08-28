@@ -13,14 +13,12 @@ export const site = {
 	location: 'Paris, France',
 	/**
 	 * Résumé link. Drop the PDF in `static/cv/` and set this to
-	 * `/cv/Teo_Lemesle.pdf` — the hero button appears on its own.
+	 * `/cv/Teo_Lemesle.pdf` - the hero button appears on its own.
 	 * `null` hides the button.
 	 */
 	resume: null as string | null,
 	socials: {
 		github: { handle: '@NoWauu', url: 'https://github.com/NoWauu' },
 		linkedin: { handle: 'téo-lemesle', url: 'https://www.linkedin.com/in/téo-lemesle' }
-	},
-	/** © year in the footer. */
-	since: 2026
+	}
 } as const;

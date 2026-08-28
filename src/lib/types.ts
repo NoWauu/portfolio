@@ -9,20 +9,18 @@ export type Locale = 'en' | 'fr';
 
 export type Theme = 'dark' | 'light';
 
-/** id of a page section — drives the nav, the scroll-spy and the explore map. */
+/** id of a page section - drives the nav, the scroll-spy and the explore map. */
 export type SectionId =
 	'about' | 'skills' | 'projects' | 'experience' | 'education' | 'awards' | 'contact';
 
-/** A `key :: value` row of the neofetch panel in the hero. */
+/** A `key :: value` row of the neofetch panel. */
 export interface InfoRow {
 	k: string;
 	v: string;
 }
 
 export interface Hero {
-	status: string;
 	role: string;
-	sub: string;
 	intro: string;
 	ctaWork: string;
 	ctaContact: string;
@@ -33,8 +31,6 @@ export interface Hero {
 export interface About {
 	title: string;
 	paragraphs: string[];
-	/** `label` is the caption, `value` the highlighted line. */
-	facts: { label: string; value: string }[];
 }
 
 export interface SkillGroup {
@@ -55,7 +51,7 @@ export interface ProjectLink {
 }
 
 export interface Project {
-	/** Stable key — also used for the screenshot filename and as a Svelte key. */
+	/** Stable key - also used for the screenshot filename and as a Svelte key. */
 	id: string;
 	name: string;
 	/** Free-form category badge, e.g. `Personal` / `Academic`. */
@@ -127,7 +123,7 @@ export interface Awards {
 export interface Contact {
 	title: string;
 	blurb: string;
-	/** Captions for the contact grid tiles — the values live in `site.ts`. */
+	/** Captions for the contact grid tiles - the values live in `site.ts`. */
 	labels: {
 		github: string;
 		linkedin: string;

@@ -1,6 +1,56 @@
 /*
+ * Self-hosted variable faces (400-700 on one axis, so one file per subset
+ * covers every weight the app uses). Served from our own origin: no
+ * third-party connection, no render-blocking stylesheet from fonts.googleapis.
+ * Latin loads first; latin-ext only downloads if the page hits one of its
+ * code points, which the French copy does.
+ */
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('/fonts/jetbrains-mono-latin.woff2') format('woff2');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('/fonts/jetbrains-mono-latin-ext.woff2') format('woff2');
+	unicode-range:
+		U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+		U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
+}
+@font-face {
+	font-family: 'Space Grotesk';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('/fonts/space-grotesk-latin.woff2') format('woff2');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'Space Grotesk';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('/fonts/space-grotesk-latin-ext.woff2') format('woff2');
+	unicode-range:
+		U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+		U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
+}
+
+/*
  * Design tokens + global primitives.
- * Every colour in the app comes from a variable declared here — changing a
+ * Every colour in the app comes from a variable declared here - changing a
  * palette means editing this file only.
  */
 
@@ -12,9 +62,11 @@
 	--panel-3: #0c120e;
 	--border: #1d271f;
 	--border-bright: #2c3b2e;
+	/* Boundary of interactive controls. Meets WCAG 1.4.11 (3:1) unlike --border-bright. */
+	--border-control: #526755;
 	--text: #d3ddd1;
-	--dim: #828f7e;
-	--muted: #5c6a58;
+	--dim: #a2afa0;
+	--muted: #7c8a78;
 	--accent: #54e08c;
 	--accent-2: #34c474;
 	--accent-ink: #04130a;
@@ -35,16 +87,17 @@
 	--panel-3: #f3f6ef;
 	--border: #d8dfd1;
 	--border-bright: #c3cdb7;
+	--border-control: #788565;
 	--text: #162017;
-	--dim: #5d6a59;
-	--muted: #7f8b7b;
-	--accent: #0f8f4c;
-	--accent-2: #0c7a40;
+	--dim: #4a5647;
+	--muted: #647060;
+	--accent: #0b7a3f;
+	--accent-2: #085c2f;
 	--accent-ink: #ffffff;
-	--accent-soft: rgba(15, 143, 76, 0.08);
+	--accent-soft: rgba(11, 122, 63, 0.09);
 	--grid: rgba(0, 0, 0, 0.03);
 	--nav-bg: rgba(238, 241, 234, 0.74);
-	--sel: rgba(15, 143, 76, 0.18);
+	--sel: rgba(11, 122, 63, 0.2);
 	--red: #e0564d;
 	--yellow: #d9a324;
 	--shadow-lg: 0 40px 100px -40px rgba(22, 32, 23, 0.35);
@@ -107,7 +160,7 @@ body {
 	background: var(--panel-3);
 }
 ::-webkit-scrollbar-thumb {
-	background: var(--border-bright);
+	background: var(--border-control);
 	border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -139,12 +192,6 @@ body {
 	margin: 0;
 }
 
-.mono-label {
-	font-size: 11.5px;
-	color: var(--muted);
-	letter-spacing: 0.3px;
-}
-
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -167,15 +214,6 @@ body {
 	50%,
 	100% {
 		opacity: 0;
-	}
-}
-
-@keyframes scan {
-	from {
-		transform: translateY(0);
-	}
-	to {
-		transform: translateY(8px);
 	}
 }
 

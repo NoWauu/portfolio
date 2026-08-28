@@ -14,14 +14,14 @@ export function describeRoom(id: SectionId, t: Content): RoomLine[] {
 		case 'skills':
 			return t.skills.groups.map((g) => ({ text: `${g.label}: ${g.items.join(', ')}` }));
 		case 'projects':
-			return t.projects.list.map((p) => ({ text: `▹ ${p.name} — ${p.desc[0]}` }));
+			return t.projects.list.map((p) => ({ text: `▹ ${p.name}: ${p.desc[0]}` }));
 		case 'experience':
 			return t.experience.list.map((x) => ({ text: `${x.role} @ ${x.company} (${x.dates})` }));
 		case 'education':
-			return t.education.list.map((e) => ({ text: `${e.degree} — ${e.school}` }));
+			return t.education.list.map((e) => ({ text: `${e.degree}, ${e.school}` }));
 		case 'awards':
 			return [
-				{ text: `${t.awards.featured.event} — ${t.awards.featured.rank}`, accent: true },
+				{ text: `${t.awards.featured.event}: ${t.awards.featured.rank}`, accent: true },
 				...t.awards.featured.tracks.map((track) => ({ text: `${track.track}: ${track.place}` }))
 			];
 		case 'contact':

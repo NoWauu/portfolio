@@ -136,7 +136,7 @@
 		height: 30px;
 		padding: 0 10px;
 		background: transparent;
-		border: 1px solid var(--border-bright);
+		border: 1px solid var(--border-control);
 		border-radius: var(--r-sm);
 		color: var(--dim);
 		font-family: inherit;

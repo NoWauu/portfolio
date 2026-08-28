@@ -87,20 +87,22 @@
 		color: var(--accent);
 	}
 
+	/*
+	 * Dividers come from the 1px gap showing the grid's own background, so
+	 * every wrap point gets a clean rule and no tile keeps a dangling edge.
+	 */
 	.tiles {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+		gap: 1px;
+		background: var(--border);
 	}
 	.tile {
 		display: block;
 		padding: 18px 20px;
-		border-right: 1px solid var(--border);
-		border-top: 1px solid transparent;
+		background: var(--panel);
 		text-decoration: none;
 		transition: background 0.2s;
-	}
-	.tile:last-child {
-		border-right: 0;
 	}
 	a.tile:hover {
 		background: var(--panel-3);
@@ -115,15 +117,5 @@
 		display: block;
 		font-size: 13px;
 		color: var(--text);
-	}
-
-	@media (max-width: 640px) {
-		.tile {
-			border-right: 0;
-			border-top-color: var(--border);
-		}
-		.tile:first-child {
-			border-top-color: transparent;
-		}
 	}
 </style>

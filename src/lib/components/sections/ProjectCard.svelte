@@ -3,20 +3,21 @@
 	import BulletList from '$lib/components/ui/BulletList.svelte';
 	import type { Project } from '$lib/types';
 
-	let { project, label }: { project: Project; label: string } = $props();
+	let { project }: { project: Project } = $props();
 </script>
 
-<article class="card panel">
-	<div class="media">
-		{#if project.image}
-			<img src={project.image} alt={project.name} loading="lazy" decoding="async" />
-		{:else}
-			<div class="placeholder" aria-hidden="true">
-				<span class="glyph">{'</>'}</span>
-			</div>
-		{/if}
-		<span class="slug">{label}</span>
-	</div>
+<!--
+	Two layouts, not one layout with a hole in it. A project without a
+	screenshot renders text-forward instead of reserving a 290px column for a
+	placeholder glyph, which is what an empty media panel actually looks like.
+	Drop a file in `static/projects/` and set `image` to promote a card.
+-->
+<article class="card panel" class:with-media={!!project.image}>
+	{#if project.image}
+		<div class="media">
+			<img src={project.image} alt="{project.name} screenshot" loading="lazy" decoding="async" />
+		</div>
+	{/if}
 
 	<div class="body">
 		<div class="meta">
@@ -42,9 +43,8 @@
 
 <style>
 	.card {
-		display: grid;
-		grid-template-columns: minmax(200px, 290px) 1fr;
-		border-radius: 12px;
+		display: block;
+		border-radius: var(--r-md);
 		overflow: hidden;
 		transition:
 			border-color 0.3s,
@@ -54,9 +54,12 @@
 		border-color: var(--border-bright);
 		transform: translateY(-3px);
 	}
+	.card.with-media {
+		display: grid;
+		grid-template-columns: minmax(200px, 290px) 1fr;
+	}
 
 	.media {
-		position: relative;
 		border-right: 1px solid var(--border);
 		background: var(--panel-3);
 		min-height: 220px;
@@ -66,34 +69,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-	.placeholder {
-		position: absolute;
-		inset: 0;
-		display: grid;
-		place-items: center;
-		background:
-			repeating-linear-gradient(
-				135deg,
-				transparent 0 10px,
-				color-mix(in srgb, var(--border) 55%, transparent) 10px 11px
-			),
-			var(--panel-3);
-	}
-	.glyph {
-		font-size: 22px;
-		color: var(--border-bright);
-	}
-	.slug {
-		position: absolute;
-		top: 12px;
-		left: 12px;
-		font-size: 11px;
-		color: var(--muted);
-		background: var(--nav-bg);
-		padding: 3px 8px;
-		border-radius: 4px;
-		backdrop-filter: blur(6px);
 	}
 
 	.body {
@@ -110,7 +85,7 @@
 		font-size: 11.5px;
 		color: var(--dim);
 		text-decoration: none;
-		border-bottom: 1px dashed var(--border-bright);
+		border-bottom: 1px dashed var(--border-control);
 		transition: color 0.2s;
 	}
 	.link:hover {
@@ -134,7 +109,7 @@
 	}
 
 	@media (max-width: 760px) {
-		.card {
+		.card.with-media {
 			grid-template-columns: 1fr;
 		}
 		.media {

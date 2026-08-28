@@ -2,11 +2,14 @@
 	import Caret from '$lib/components/ui/Caret.svelte';
 	import { site } from '$lib/data';
 	import { prefs } from '$lib/state/preferences.svelte';
+
+	// Baked at build time on this prerendered site, so it refreshes on each deploy.
+	const year = new Date().getFullYear();
 </script>
 
 <footer>
 	<span><span class="sigil" aria-hidden="true">$</span> {prefs.t.footer}</span>
-	<span>© {site.since} · <span class="name">{site.name}</span><Caret height="0.9em" /></span>
+	<span>© {year} · <span class="name">{site.name}</span><Caret height="0.9em" /></span>
 </footer>
 
 <style>

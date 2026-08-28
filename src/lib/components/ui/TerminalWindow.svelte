@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import Dots from './Dots.svelte';
 
-	/** Bordered panel with a title bar — the neofetch card, the explore modal, … */
+	/** Bordered panel with a title bar - the neofetch card, the explore modal, … */
 	let {
 		title,
 		actions,

@@ -27,8 +27,12 @@
 <style>
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 18px;
+	}
+	/* Odd group count: the last card takes the full row instead of leaving a hole. */
+	.group:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
 	}
 
 	.group {
@@ -64,5 +68,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px;
+	}
+
+	@media (max-width: 720px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

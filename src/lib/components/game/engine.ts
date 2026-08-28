@@ -1,6 +1,6 @@
 import type { SectionId } from '$lib/types';
 
-/** Logical canvas size — the element is scaled with CSS, coordinates stay fixed. */
+/** Logical canvas size - the element is scaled with CSS, coordinates stay fixed. */
 export const MAP = { width: 640, height: 440 } as const;
 
 export interface RoomNode {
@@ -41,7 +41,7 @@ const PLAYER_R = 6;
 
 /**
  * Headless movement + rendering for the explore mini-map.
- * No Svelte, no DOM lookups — the component owns input and state.
+ * No Svelte, no DOM lookups - the component owns input and state.
  */
 export class Explorer {
 	player = { x: MAP.width / 2, y: MAP.height / 2, vx: 0, vy: 0 };
